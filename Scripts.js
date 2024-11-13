@@ -25,8 +25,8 @@ const handleSubimit = (event) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({Quantidade, Modelo, Cliente, Data, Descricao }),
-    } ).then(() => removeloading() ).then (() => alert("dados enviados!!!") );
+        body: JSON.stringify({ Quantidade, Modelo, Cliente, Data, Descricao }),
+    }).then(() => removeloading()).then(() => alert("dados enviados!!!"));
 }
 
 document.querySelector('form').addEventListener('submit', handleSubimit);
