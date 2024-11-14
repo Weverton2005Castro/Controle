@@ -4,8 +4,9 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
   }
-  
+
   body {
+    cursor: url("img/Cursor.png");
     display: flex;
     justify-content: center;
     align-items: center;
