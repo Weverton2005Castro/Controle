@@ -1,16 +1,12 @@
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
+import sql from 'mssql';
 
-async function criarEPopularTabelaUsuarios(nome, sobrenome) {
-    const db = await open({
-        filename: './banco.db',
-        driver: sqlite3.Database,
-    });
-
-    db.run(
-        'CREATE TABLE IF NOT EXISTS usuarios(id INTERGER PRIMARY KEY, nome TEXT, sobrenome TEXT)'
-    );
-    db.run('INSERT INTO usuarios (nome, sobrenome) VALUES (?,?)', [nome, sobrenome] )
-}
-
-criarEPopularTabelaUsuarios('teste', 'thiago');
+(async () => {
+    try {
+        // certifique-se de que todos os itens estejam corretamente codificados em URL na cadeia de conexão
+        await sql.connect('Server=ETTERA-4C3Y83/PROJETOWEVERTON;Database=CONTROLE;User Id=sa;Password=castro;Encrypt=true')
+        const result = await sql.query`select * from TBCONTROLE `
+        console.dir(result)
+    }catch (err) {
+        alert("deu algum tipo de erro" +err )
+    }
+})
