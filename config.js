@@ -7,6 +7,6 @@ import sql from 'mssql';
         const result = await sql.query`select * from TBCONTROLE `
         console.dir(result)
     }catch (err) {
-        alert("deu algum tipo de erro" +err )
+        alert("deu erro" +err )
     }
 })
